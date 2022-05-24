@@ -1,13 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/11 20:47:21 by junykim           #+#    #+#             */
-/*   Updated: 2022/05/24 17:57:19 by junykim          ###   ########.fr       */
+/*   Created: 2022/05/24 18:24:32 by junykim           #+#    #+#             */
+/*   Updated: 2022/05/24 18:25:02 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+
+void	free_list(t_stack *head)
+{
+	t_stack	*dump;
+
+	while (head->next)
+	{
+		dump = head;
+		head = head->next;
+		free(dump);
+		dump = NULL;
+	}
+	free(head);
+}
+
+void	free_head_and_tail(t_stack **head, t_stack **tail)
+{
+	free_list(*head);
+	free_list(*tail);
+	(*head) = NULL;
+	(*tail) = NULL;
+}
