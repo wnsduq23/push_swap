@@ -6,7 +6,7 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:46:19 by junykim           #+#    #+#             */
-/*   Updated: 2022/05/24 17:57:51 by junykim          ###   ########.fr       */
+/*   Updated: 2022/05/24 19:39:31 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_stack	*pop_stack(t_stack *head)
 
 	ret = head->next;
 	head->size -= 1;
-	del_node(ret);
+	del_node_from_stack(ret);
 	return (ret);
 }
 
@@ -72,7 +72,7 @@ void	reverse_rotate_stack(t_stack *head, t_stack *tail)
 	t_stack	*bottom;
 
 	bottom = tail->prev;
-	del_node(bottom);
+	del_node_from_stack(bottom);
 	head->next->prev = bottom;
 	bottom->prev = head;
 	bottom->next = head->next;
