@@ -6,10 +6,14 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:47:21 by junykim           #+#    #+#             */
-/*   Updated: 2022/07/05 13:38:32 by junykim          ###   ########.fr       */
+/*   Updated: 2022/07/19 11:16:03 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+#include <stdio.h>
 
-
+sort_array(t_stack *head_a, char **av)
+{
+	printf("%s",av);
+}

@@ -6,7 +6,7 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:27:54 by junykim           #+#    #+#             */
-/*   Updated: 2022/05/24 18:25:54 by junykim          ###   ########.fr       */
+/*   Updated: 2022/07/19 17:11:05 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,53 +17,45 @@
 # include <unistd.h>
 # include "../libft/libft.h"
 
-# define ERR_PARAM_NUM "error parameter num"
+# define ERR_PARAM_NUM	"error parameter num"
+# define ERR_ALLOC		"Fail Allocation"
+# define ERR_NBR		"it isn't nbr"
 
-typedef enum e_mode
+typedef enum e_bool
 {
-	ATOB,
-	BTOA
-}t_mode;
-
-typedef struct s_stack
-{
-	int				elem;
-	int				size;// size of stack
-	struct s_stack	*next;
-	struct s_stack	*prev;
-
-}					t_stack;
+	FALSE,
+	TRUE
+}			t_bool;
 
 // ================================
 //				init_free.c
 // ================================
-t_stack	*init_node(void);
-void	init_head_and_tail(t_stack **head, t_stack **tail, int size);
 
 // ================================
-//				free.c
+//				sort.c
 // ================================
-void	free_list(t_stack *head);
-void	free_head_and_tail(t_stack **head, t_stack **tail);
+void	_reverse_rotate(int *stack, int size);
+void	_rotate(int *stack, int size);
+void	_swap(int *stack_a, int *stack_b);
 
 // ================================
-//				util_stack.c
+//				stack.c
 // ================================
-t_stack	*pop_stack(t_stack *head);
-void	swap_stack(t_stack *head);
-void	push_stack(t_stack *head_a, t_stack *head_b, t_mode mode);
-void	rotate_stack(t_stack *head, t_stack *tail);
-void	reverse_rotate_stack(t_stack *head, t_stack *tail);
+void	_make_stack();
+int		*_sort_stack_malloc();
 
 // ================================
 //				push_swap.c
 // ================================
-void	sort_array(t_stack *head, char **av);
+void	_move_to_a(int *stack_a, int *stack_b, int size);
+void	_move_to_b(int *stack_a, int *stack_b, int size);
+
 
 // ================================
 //				util.c
 // ================================
-void	ft_error(char *s);
-void	del_node_from_stack(t_stack *node);
+t_bool	_isdigit(const char *str);
+void	_error_msg(char *str);
+void	ft_swap(int *a, int *b);
 
 #endif
