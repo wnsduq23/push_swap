@@ -6,15 +6,14 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 17:10:05 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/21 16:13:17 by junykim          ###   ########.fr       */
+/*   Updated: 2022/08/21 18:14:57 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /** type : -1	-> Error */
-/** type : 1	-> Success */
-/** type : 0	-> Nothing  */
+/** type : +1	-> Nothing  */
 void	_error_msg(int type)
 {
 	if (type >= 1)

@@ -6,7 +6,7 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 12:31:20 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/21 15:41:33 by junykim          ###   ########.fr       */
+/*   Updated: 2022/08/21 17:59:25 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_sort_big_last(t_info *info)
 	int	min_location;
 
 	min = get_stack_min(info->top_a);
-	min_location = set_a_location_min(info);
+	min_location = get_location(info, MIN);
 	while (min_location)
 	{
 		if (min_location > 0)

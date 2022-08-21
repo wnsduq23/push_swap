@@ -6,7 +6,7 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:27:54 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/21 16:12:45 by junykim          ###   ########.fr       */
+/*   Updated: 2022/08/21 17:57:50 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@
 # define ERR_ALLOC		"Fail Allocation"
 # define ERR_NBR		"it isn't nbr"
 
-typedef enum e_bool
+typedef enum e_value
 {
-	FALSE,
-	TRUE
-}			t_bool;
+	MIN,
+	MAX
+}			t_value;
 
 // it's doubly linked list for stack a and b
 typedef struct s_numbers
@@ -130,10 +130,11 @@ void		_rotate_b(t_info *info, int b);
 //				sort_rotate.c
 // ================================
 int			get_stack_min(t_numbers *stack);
+int			get_location(t_info *info, t_value v);
 int			set_a_location_min(t_info *info);
 int			get_stack_max(t_numbers *stack);
 int			set_a_location_max(t_info *info);
-int			set_a_location_mid(int num, t_info *info);
+int			get_location_mid(int num, t_info *info);
 
 // ================================
 //				util.c

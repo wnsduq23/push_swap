@@ -6,7 +6,7 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 20:09:15 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/16 20:19:34 by junykim          ###   ########.fr       */
+/*   Updated: 2022/08/21 17:56:37 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	set_a_location(int num, t_info *info)
 	int	ret;
 
 	if (num < get_stack_min(info->top_a))
-		ret = set_a_location_min(info);
+		ret = get_location(info, MIN);
 	else if (num > get_stack_max(info->top_a))
-		ret = set_a_location_max(info);
+		ret = get_location(info, MAX);
 	else
-		ret = set_a_location_mid(num, info);
+		ret = get_location_mid(num, info);
 	return (ret);
 }
 
@@ -41,7 +41,6 @@ void	_rotate_same(t_info *info, int *a, int *b)
 	}
 }
 
-//a,b 를 타입으로 생각해서 이 둘 함수를 합칠 수 없을까?
 void	_rotate_a(t_info *info, int a)
 {
 	while (a)

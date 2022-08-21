@@ -6,7 +6,7 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 19:52:32 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/21 16:00:26 by junykim          ###   ########.fr       */
+/*   Updated: 2022/08/21 16:17:14 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	_sort_bigger(t_info *info)
 	int	a;
 	int	b;
 
-	_sort_three_division(info);
+	ft_sort_three_division(info);
 	while (info->size_a > 3)
 		pb(info);
 	if (info->size_a == 2)
