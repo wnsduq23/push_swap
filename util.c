@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 18:24:32 by junykim           #+#    #+#             */
-/*   Updated: 2022/05/24 18:25:02 by junykim          ###   ########.fr       */
+/*   Created: 2022/08/16 17:10:05 by junykim           #+#    #+#             */
+/*   Updated: 2022/08/21 16:13:17 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
+#include "push_swap.h"
 
-void	free_list(t_stack *head)
+/** type : -1	-> Error */
+/** type : 1	-> Success */
+/** type : 0	-> Nothing  */
+void	_error_msg(int type)
 {
-	t_stack	*dump;
-
-	while (head->next)
-	{
-		dump = head;
-		head = head->next;
-		free(dump);
-		dump = NULL;
-	}
-	free(head);
+	if (type >= 1)
+		write(2, "Error\n", 6);
+	exit(1);
 }
 
-void	free_head_and_tail(t_stack **head, t_stack **tail)
+int	ft_isspace(char c)
 {
-	free_list(*head);
-	free_list(*tail);
-	(*head) = NULL;
-	(*tail) = NULL;
+	if ((9 <= c && c <= 13) || c == ' ')
+		return (1);
+	else
+		return (0);
 }

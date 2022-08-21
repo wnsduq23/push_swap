@@ -5,35 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 11:25:16 by junykim           #+#    #+#             */
-/*   Updated: 2022/07/19 16:30:28 by junykim          ###   ########.fr       */
+/*   Created: 2022/08/16 16:16:27 by junykim           #+#    #+#             */
+/*   Updated: 2022/08/21 16:11:58 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
-#include <stdio.h>
+#include "push_swap.h"
 
-//input : 2 1 3 6 5 8 -> array : 2 1 3 6 5 8
-// 1 "3 2 7" 되야함 split
-//  +1 -2 3 되야함
-//  INT_MAX + 1 <- error
+// where is array free ?
 int	main(int ac, char **av)
 {
-	int	*stack_a;	
-	int	*stack_b;
+	int		arr_size;
+	int		*num_array;
+	t_info	*info;
 
-	if (ac < 1)
-		_error_msg(ERR_PARAM_NUM);
-	stack_a = malloc(sizeof(int) * (ac - 1));
-	if (!stack_a)
-		_error_msg(ERR_ALLOC);
-	_make_stack(stack_a, ac, av);
-	stack_b = malloc(sizeof(int) * (ac - 1));
-	if (!stack_b)
-		_error_msg(ERR_ALLOC);
-	_move_to_b(stack_a, stack_b, ac - 1);
-	_move_to_a(stack_a, stack_b, ac - 1);
-	
-	free(stack_a);
+	if (ac < 2)
+		_error_msg(-1);
+	arr_size = 0;
+	info = _init_info();
+	arr_size = get_str_size(ac, av);
+	num_array = _av_to_array(ac, av, arr_size);
+	_arr_to_stack(info, num_array, arr_size);
+	_check_array_sorted(num_array, arr_size, 0);
+	info->array = (int *)num_array;
+	_sort(info);
+	//free_array(info);
 	return (0);
 }
