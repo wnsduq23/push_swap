@@ -6,7 +6,7 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:27:54 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/21 17:57:50 by junykim          ###   ########.fr       */
+/*   Updated: 2022/08/23 13:35:41 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void		sa(t_info *info);
 void		sb(t_info *info);
 void		ss(t_info *info);
 
+// pb : push num a to b , pa : push num b to a 
 // ================================
 //			cmd_push.c
 // ================================
@@ -109,12 +110,13 @@ void		_sort_bigger(t_info *info);
 void		_sort(t_info *info);
 void		_sort_three(t_info *info);
 
+//divide three parts is sort roughly
 // ================================
 //				sort_util.c
 // ================================
 void		ft_sort_big_last(t_info *info);
-void		ft_sort_3div_insruct(t_info *info, int pivot1, int pivot2);
-void		ft_sort_three_division(t_info *info);
+void		_compare_top_pivot(t_info *info, int pivot1, int pivot2);
+void		_divide_three_parts(t_info *info);
 int			ft_get_bigger(int a, int b, int a_loc, int b_loc);
 void		get_min_rotate(t_info *info, int *a, int *b);
 
@@ -126,14 +128,13 @@ void		_rotate_same(t_info *info, int *a, int *b);
 void		_rotate_a(t_info *info, int a);
 void		_rotate_b(t_info *info, int b);
 
+// get_location is find max or min location in stack 
 // ================================
 //				sort_rotate.c
 // ================================
 int			get_stack_min(t_numbers *stack);
 int			get_location(t_info *info, t_value v);
-int			set_a_location_min(t_info *info);
 int			get_stack_max(t_numbers *stack);
-int			set_a_location_max(t_info *info);
 int			get_location_mid(int num, t_info *info);
 
 // ================================

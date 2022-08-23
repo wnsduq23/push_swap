@@ -6,12 +6,13 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 20:09:15 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/21 17:56:37 by junykim          ###   ########.fr       */
+/*   Updated: 2022/08/23 13:50:06 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+//max와min의 위치를 계속찾는 거는 비효율 아닌가 ? 
 int	set_a_location(int num, t_info *info)
 {
 	int	ret;

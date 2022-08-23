@@ -6,7 +6,7 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 12:31:20 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/21 17:59:25 by junykim          ###   ########.fr       */
+/*   Updated: 2022/08/23 12:54:49 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_sort_big_last(t_info *info)
 	}
 }
 
-void	ft_sort_3div_insruct(t_info *info, int pivot1, int pivot2)
+void	_compare_top_pivot(t_info *info, int pivot1, int pivot2)
 {
 	if (info->top_a->data < pivot1)
 	{
@@ -48,7 +48,7 @@ void	ft_sort_3div_insruct(t_info *info, int pivot1, int pivot2)
 		ra(info);
 }
 
-void	ft_sort_three_division(t_info *info)
+void	_divide_three_parts(t_info *info)
 {
 	int	idx;
 	int	pivot1;
@@ -61,7 +61,7 @@ void	ft_sort_three_division(t_info *info)
 	idx = info->size_a;
 	while (idx)
 	{
-		ft_sort_3div_insruct(info, pivot1, pivot2);
+		_compare_top_pivot(info, pivot1, pivot2);
 		idx--;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 19:52:32 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/21 16:17:14 by junykim          ###   ########.fr       */
+/*   Updated: 2022/08/23 13:21:27 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ void	_sort_bigger(t_info *info)
 	int	a;
 	int	b;
 
-	ft_sort_three_division(info);
+	_divide_three_parts(info);
+	//_sort(info); can i replace that ?
 	while (info->size_a > 3)
 		pb(info);
 	if (info->size_a == 2)
