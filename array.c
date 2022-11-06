@@ -67,7 +67,7 @@ void	_check_array_sorted(int *array, int size, int idx)
 		j = 0;
 		while (j < size - 1)
 		{
-			if (array[j] < array[j + 1])
+			if (array[j] > array[j + 1])
 			{
 				tmp = array[j];
 				array[j] = array[j + 1];

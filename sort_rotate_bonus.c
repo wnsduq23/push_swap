@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_rotate.c                                      :+:      :+:    :+:   */
+/*   sort_rotate_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/16 20:09:15 by junykim           #+#    #+#             */
-/*   Updated: 2022/11/05 20:56:13 by junykim          ###   ########.fr       */
+/*   Created: 2022/11/06 20:40:29 by junykim           #+#    #+#             */
+/*   Updated: 2022/11/06 20:40:54 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ void	_rotate_same(t_info *info, int *a, int *b)
 {
 	while (*a && *b && (*a > 0 && *b > 0))
 	{
-		rr(info);
+		rr_b(info);
 		*a = *a - 1;
 		*b = *b - 1;
 	}
 	while (*a && *b && (*a < 0 && *b < 0))
 	{
-		rrr(info);
+		rrr_b(info);
 		*a = *a + 1;
 		*b = *b + 1;
 	}
@@ -48,12 +48,12 @@ void	_rotate_a(t_info *info, int a)
 	{
 		if (a > 0)
 		{
-			ra(info);
+			ra_b(info);
 			a--;
 		}
 		else
 		{
-			rra(info);
+			rra_b(info);
 			a++;
 		}
 	}
@@ -65,12 +65,12 @@ void	_rotate_b(t_info *info, int b)
 	{
 		if (b > 0)
 		{
-			rb(info);
+			rb_b(info);
 			b--;
 		}
 		else
 		{
-			rrb(info);
+			rrb_b(info);
 			b++;
 		}
 	}

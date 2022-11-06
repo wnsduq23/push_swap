@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_util.c                                        :+:      :+:    :+:   */
+/*   sort_util_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 12:31:20 by junykim           #+#    #+#             */
-/*   Updated: 2022/11/06 20:52:33 by junykim          ###   ########.fr       */
+/*   Created: 2022/11/06 20:38:28 by junykim           #+#    #+#             */
+/*   Updated: 2022/11/06 20:42:15 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ void	ft_sort_big_last(t_info *info)
 	{
 		if (min_location > 0)
 		{
-			ra(info);
+			ra_b(info);
 			min_location--;
 		}
 		else
 		{
-			rra(info);
+			rra_b(info);
 			min_location++;
 		}
 	}
@@ -39,13 +39,13 @@ void	_compare_top_pivot(t_info *info, int pivot1, int pivot2)
 {
 	if (info->top_a->data < pivot1)
 	{
-		pb(info);
-		rb(info);
+		pb_b(info);
+		rb_b(info);
 	}
 	else if (info->top_a->data < pivot2)
-		pb(info);
+		pb_b(info);
 	else
-		ra(info);
+		ra_b(info);
 }
 
 void	_divide_three_parts(t_info *info)

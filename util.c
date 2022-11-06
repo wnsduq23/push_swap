@@ -6,7 +6,7 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 17:10:05 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/23 12:39:28 by junykim          ###   ########.fr       */
+/*   Updated: 2022/11/06 19:40:21 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /** type : +1	-> Nothing  */
 void	_error_msg(int type)
 {
-	if (type >= 1)
+	if (type < 1)
 		write(2, "Error\n", 6);
 	exit(1);
 }

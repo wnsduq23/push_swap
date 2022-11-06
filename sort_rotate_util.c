@@ -6,7 +6,7 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 12:13:25 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/21 17:58:27 by junykim          ###   ########.fr       */
+/*   Updated: 2022/11/05 20:56:27 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,22 @@ int	get_stack_min(t_numbers *stack)
 	return (ret);
 }
 
-int	get_location(t_info *info, t_value v)
+int	set_location(t_info *info, t_value v)
 {
 	int			ret;
 	int			value;
 	int			tmp;
 	t_numbers	*stack_a;
 
+	ret = 0;
 	stack_a = info->top_a;
 	if (v == MIN)
 		value = get_stack_min(stack_a);
 	else if (v == MAX)
+	{
+		ret++;
 		value = get_stack_max(stack_a);
-	ret = 0;
-	tmp = 0;
+	}
 	while (stack_a)
 	{
 		tmp = stack_a->data;
@@ -68,7 +70,7 @@ int	get_stack_max(t_numbers *stack)
 	return (ret);
 }
 
-int	get_location_mid(int num, t_info *info)
+int	set_location_mid(int num, t_info *info)
 {
 	t_numbers	*stack_a;
 	int			ret;

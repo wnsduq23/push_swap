@@ -6,7 +6,7 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 20:27:54 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/23 13:35:41 by junykim          ###   ########.fr       */
+/*   Updated: 2022/11/06 20:32:39 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,25 @@ void		sa(t_info *info);
 void		sb(t_info *info);
 void		ss(t_info *info);
 
+// ================================
+//			cmd_swap_bonus.c
+// ================================
+void		sa_b(t_info *info);
+void		sb_b(t_info *info);
+void		ss_b(t_info *info);
+
 // pb : push num a to b , pa : push num b to a 
 // ================================
 //			cmd_push.c
 // ================================
 void		pa(t_info *info);
 void		pb(t_info *info);
+
+// ================================
+//			cmd_push_bonus.c
+// ================================
+void		pa_b(t_info *info);
+void		pb_b(t_info *info);
 
 // ================================
 //			cmd_reverse.c
@@ -81,11 +94,25 @@ void		rb(t_info *info);
 void		rr(t_info *info);
 
 // ================================
+//			cmd_r_bonus.c
+// ================================
+void		ra_b(t_info *info);
+void		rb_b(t_info *info);
+void		rr_b(t_info *info);
+
+// ================================
 //			cmd_rreverse.c
 // ================================
 void		rra(t_info *info);
 void		rrb(t_info *info);
 void		rrr(t_info *info);
+
+// ================================
+//			cmd_rr_bonus.c
+// ================================
+void		rra_b(t_info *info);
+void		rrb_b(t_info *info);
+void		rrr_b(t_info *info);
 
 // ================================
 //				array.c
@@ -133,9 +160,9 @@ void		_rotate_b(t_info *info, int b);
 //				sort_rotate.c
 // ================================
 int			get_stack_min(t_numbers *stack);
-int			get_location(t_info *info, t_value v);
+int			set_location(t_info *info, t_value v);
 int			get_stack_max(t_numbers *stack);
-int			get_location_mid(int num, t_info *info);
+int			set_location_mid(int num, t_info *info);
 
 // ================================
 //				util.c

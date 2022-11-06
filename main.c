@@ -6,11 +6,12 @@
 /*   By: junykim <junykim@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 16:16:27 by junykim           #+#    #+#             */
-/*   Updated: 2022/08/21 16:11:58 by junykim          ###   ########.fr       */
+/*   Updated: 2022/11/05 21:35:45 by junykim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 // where is array free ?
 int	main(int ac, char **av)
@@ -29,6 +30,5 @@ int	main(int ac, char **av)
 	_check_array_sorted(num_array, arr_size, 0);
 	info->array = (int *)num_array;
 	_sort(info);
-	//free_array(info);
 	return (0);
 }
